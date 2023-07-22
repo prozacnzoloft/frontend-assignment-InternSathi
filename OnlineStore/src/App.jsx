@@ -27,7 +27,7 @@ function App() {
   };
   return (
        <ProductContext.Provider value={products}>
-    <div className=" min-h-screen border border-red-500 flex flex-wrap flex-col">
+    <div className=" min-h-screen flex flex-wrap flex-col">
         <Router>
           <Navbar />
           <Routes>
