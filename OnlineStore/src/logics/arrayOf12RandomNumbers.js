@@ -16,7 +16,7 @@ function getRandomNumber(min, max) {
   }
   
   const minNumber = 1;
-  const maxNumber = 30;
+  const maxNumber = 20;
   const numberOfRandomNumbers = 12;
   
   

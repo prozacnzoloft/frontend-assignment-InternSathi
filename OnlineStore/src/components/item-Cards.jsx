@@ -65,12 +65,12 @@ export const Card = (props) => {
           {stars.map((elem) => {
             if (productRating >=1) {
               productRating--;
-              return <img className="w-3 md:w-4 lg:w-5" src={fullStar} alt="" />;
+              return <img className="w-5 sm:w-6 lg:w-5" src={fullStar} alt="" />;
             } else if (productRating > 0 && productRating < 1) {
                 productRating--;
-              return <img className="w-3 md:w-4 lg:w-5" src={halfStar} alt="" />;
+              return <img className="w-5 sm:w-6 lg:w-5" src={halfStar} alt="" />;
             } else if (productRating <= 0 ) {
-              return <img className="w-3 md:w-4 lg:w-5" src={emptyStar} alt="" />;
+              return <img className="w-5 sm:w-6 lg:w-5" src={emptyStar} alt="" />;
             }
           })}
         </div>

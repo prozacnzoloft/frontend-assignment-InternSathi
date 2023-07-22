@@ -1,31 +1,17 @@
 import { generateRandomNumbersArray } from "../logics/arrayOf12RandomNumbers"
 import { Card } from "./item-Cards"
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import React from "react";
+import { ProductContext } from "../App";
 
-export const BrowsingSection = () => {
-    const [arrayOfIds, fun] = useState(generateRandomNumbersArray());
+export const BrowsingSection = (props) => {
+    const products = React.useContext(ProductContext);
 
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        // Fetch data from the API endpoint when the component mounts
-        fetchProducts();
-    }, []);
-
-
-
-    const fetchProducts = async () => {
-        try {
-            const response = await fetch('https://fakestoreapi.com/products');
-            const data = await response.json();
-            setProducts(data);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
+  const [arrayOfIds, fun] = useState(generateRandomNumbersArray());
+  
 
     return (
-        <div className="grid sm:grid-cols-4 place-content-evenly">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-content-evenly">
             {arrayOfIds.map((id) => {
                 const product = products.find((product) => product.id === id);
                 if (product) {
